@@ -13,6 +13,7 @@ app.use(cors(), express.json(), authMiddleware);
 
 app.post("/login", handleLogin);
 const typeDefs = await readFile("./schema.graphql", "utf8");
+console.log("Schema loaded:", typeDefs);
 
 const apolloServer = new ApolloServer({
   typeDefs,
