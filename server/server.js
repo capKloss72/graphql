@@ -1,5 +1,5 @@
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';  
+import { ApolloServer } from "";
+import { startStandaloneServer } from "@apollo/server/standalone";
 
 const typeDefs = `#graphql
 
@@ -14,14 +14,14 @@ const typeDefs = `#graphql
 
 const resolvers = {
   Query: {
-    greeting: () => 'Hello, world!',
+    greeting: () => "Hello, world!",
   },
 };
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-});  
+});
 
 const info = await startStandaloneServer(server, { listen: { port: 9000 } });
 console.log(`Server is running at: ${info.url}`);
